@@ -3,6 +3,8 @@
 **Toolkit Finansial & Administrasi Lengkap untuk Freelancer Indonesia**  
 *100% Client-Side • Tanpa Watermark • Privasi Aman • Gratis & Open Source*
 
+🌐 **Live Demo (GitHub Pages)**: [https://fahmiprasanda123.github.io/kawan-freelance/](https://fahmiprasanda123.github.io/kawan-freelance/)
+
 ---
 
 ## 🚀 Fitur Utama
@@ -29,6 +31,20 @@
 4. **100% Client-Side & Privasi Terjaga**
    - Tidak ada data transaksi, rekening, atau nama klien yang dikirim ke server.
    - Semua pemrosesan berlangsung langsung di browser Anda.
+
+---
+
+## ☕ Dukung Pengembang (Support & Donation)
+
+Jika **KawanFreelance** membantu pekerjaan, penagihan invoice, atau perhitungan pajak Anda, Anda dapat mentraktir secangkir kopi untuk mendukung keberlanjutan proyek open-source ini:
+
+- 🇮🇩 **Saweria (QRIS, GoPay, OVO, ShopeePay, DANA)**:  
+  [![Saweria](https://img.shields.io/badge/Saweria-Traktir%20Kopi-ea580c?style=for-the-badge&logo=coffee)](https://saweria.co/itsamilitarysecret)  
+  👉 [https://saweria.co/itsamilitarysecret](https://saweria.co/itsamilitarysecret)
+
+- ☕ **Buy Me a Coffee (Credit Card, PayPal, Apple/Google Pay)**:  
+  [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow.svg?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/itsamilitarysecret)  
+  👉 [https://buymeacoffee.com/itsamilitarysecret](https://buymeacoffee.com/itsamilitarysecret)
 
 ---
 

@@ -5,8 +5,8 @@
 
 // Konfigurasi Default Donasi (Bisa diubah user via menu setting dan disimpan di localStorage)
 const DEFAULT_DONATION_CONFIG = {
-  saweriaUrl: "https://saweria.co/fahmiprasanda",
-  buymeacoffeeUrl: "https://buymeacoffee.com/fahmiprasanda",
+  saweriaUrl: "https://saweria.co/itsamilitarysecret",
+  buymeacoffeeUrl: "https://buymeacoffee.com/itsamilitarysecret",
   authorName: "Developer Independen"
 };
 
@@ -16,7 +16,11 @@ function loadDonationConfig() {
   const saved = localStorage.getItem("kawan_freelance_donation");
   if (saved) {
     try {
-      currentDonationConfig = { ...DEFAULT_DONATION_CONFIG, ...JSON.parse(saved) };
+      const parsed = JSON.parse(saved);
+      // Migrasi jika masih menggunakan URL default lama
+      if (parsed.saweriaUrl?.includes("fahmiprasanda")) parsed.saweriaUrl = DEFAULT_DONATION_CONFIG.saweriaUrl;
+      if (parsed.buymeacoffeeUrl?.includes("fahmiprasanda")) parsed.buymeacoffeeUrl = DEFAULT_DONATION_CONFIG.buymeacoffeeUrl;
+      currentDonationConfig = { ...DEFAULT_DONATION_CONFIG, ...parsed };
     } catch (e) {
       console.warn("Gagal parse config donasi", e);
     }
