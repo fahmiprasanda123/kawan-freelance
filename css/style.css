@@ -1,6 +1,5 @@
 /* ===================================================================
-   KAWANFREELANCE DESIGN SYSTEM & STYLESHEET
-   Aesthetics: Modern SaaS, Clean Glassmorphism, Crisp Typography, A4 Paper Simulation
+   KAWANFREELANCE STYLESHEET
    =================================================================== */
 
 :root {
@@ -16,7 +15,7 @@
   --text-main: #0f172a;
   --text-secondary: #475569;
   --text-muted: #64748b;
-  --text-light: #94a3b8;
+  --text-light: #64748b;
 
   --border-light: #e2e8f0;
   --border-hover: #cbd5e1;
@@ -96,9 +95,7 @@ button, input, select, textarea {
 
 /* Header & Top Bar */
 .app-header {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--bg-surface);
   border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
@@ -127,7 +124,10 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .logo-title {
@@ -461,18 +461,16 @@ button, input, select, textarea {
 .preview-badge-status {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--emerald);
+  color: var(--text-secondary);
 }
 
-.pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-full);
-  background-color: var(--emerald);
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+.preview-badge-status svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary);
 }
 
 /* A4 Paper Simulation */
