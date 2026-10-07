@@ -95,31 +95,38 @@ function renderItemRows() {
 
   container.innerHTML = "";
   invoiceItems.forEach((item, index) => {
-    const row = document.createElement("div");
-    row.className = "item-row";
-    row.innerHTML = `
-      <div class="col-desc">
-        <input type="text" class="input-field" value="${item.desc}" placeholder="Deskripsi pekerjaan / produk" oninput="updateItem(${item.id}, 'desc', this.value)" />
-      </div>
-      <div class="col-qty">
-        <input type="number" min="1" class="input-field" value="${item.qty}" oninput="updateItem(${item.id}, 'qty', this.value)" />
-      </div>
-      <div class="col-unit">
-        <input type="text" class="input-field" value="${item.unit}" placeholder="Jam/Hari" oninput="updateItem(${item.id}, 'unit', this.value)" />
-      </div>
-      <div class="col-price">
-        <input type="number" min="0" step="1000" class="input-field" value="${item.price}" oninput="updateItem(${item.id}, 'price', this.value)" />
-      </div>
-      <div class="col-subtotal font-mono font-medium text-right">
-        ${formatRupiah(item.qty * item.price)}
-      </div>
-      <div class="col-action">
-        <button type="button" class="btn-icon btn-danger" onclick="removeItem(${item.id})" title="Hapus baris">
+    const card = document.createElement("div");
+    card.className = "item-card";
+    card.innerHTML = `
+      <div class="item-card-header">
+        <div class="item-desc-wrapper">
+          <label class="item-mini-label">Deskripsi Layanan / Item #${index + 1}</label>
+          <input type="text" class="input-field" value="${item.desc}" placeholder="Contoh: Desain UI/UX Mobile App" oninput="updateItem(${item.id}, 'desc', this.value)" />
+        </div>
+        <button type="button" class="btn-icon btn-danger item-delete-btn" onclick="removeItem(${item.id})" title="Hapus baris item">
           <i data-lucide="trash-2"></i>
         </button>
       </div>
+      <div class="item-card-details">
+        <div class="detail-field col-qty">
+          <label class="item-mini-label">Jumlah</label>
+          <input type="number" min="1" class="input-field font-mono text-center" value="${item.qty}" oninput="updateItem(${item.id}, 'qty', this.value)" />
+        </div>
+        <div class="detail-field col-unit">
+          <label class="item-mini-label">Satuan</label>
+          <input type="text" class="input-field text-center" value="${item.unit}" placeholder="Paket/Jam" oninput="updateItem(${item.id}, 'unit', this.value)" />
+        </div>
+        <div class="detail-field col-price">
+          <label class="item-mini-label">Harga Satuan (Rp)</label>
+          <input type="number" min="0" step="1000" class="input-field font-mono" value="${item.price}" oninput="updateItem(${item.id}, 'price', this.value)" />
+        </div>
+        <div class="detail-field col-subtotal">
+          <label class="item-mini-label text-right">Subtotal</label>
+          <div class="item-subtotal-val font-mono font-bold text-right">${formatRupiah(item.qty * item.price)}</div>
+        </div>
+      </div>
     `;
-    container.appendChild(row);
+    container.appendChild(card);
   });
 
   if (window.lucide) {

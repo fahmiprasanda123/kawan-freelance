@@ -239,7 +239,7 @@ button, input, select, textarea {
 /* Two-Column Editor Layout (Form + Preview) */
 .editor-layout {
   display: grid;
-  grid-template-columns: 460px 1fr;
+  grid-template-columns: 480px 1fr;
   gap: 28px;
   align-items: start;
 }
@@ -324,33 +324,85 @@ button, input, select, textarea {
   color: var(--text-muted);
 }
 
-/* Items Table in Form */
+/* Items Card in Form */
 .items-list-container {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.item-row {
-  display: grid;
-  grid-template-columns: 2.2fr 0.8fr 0.8fr 1.4fr 1.4fr 40px;
-  gap: 8px;
-  align-items: center;
-  background: var(--bg-muted);
-  padding: 10px;
-  border-radius: var(--radius-md);
+.item-card {
+  background: #ffffff;
   border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-fast);
 }
 
-@media (max-width: 600px) {
-  .item-row {
+.item-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.item-card-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.item-desc-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-mini-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.item-delete-btn {
+  margin-bottom: 2px;
+  flex-shrink: 0;
+}
+
+.item-card-details {
+  display: grid;
+  grid-template-columns: 65px 85px 1fr auto;
+  gap: 8px;
+  align-items: flex-end;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-light);
+}
+
+@media (max-width: 500px) {
+  .item-card-details {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.item-row .col-subtotal {
+.detail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-subtotal-val {
+  padding: 8px 10px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--primary);
   font-size: 0.85rem;
-  color: var(--text-main);
+  white-space: nowrap;
 }
 
 /* Signature Pad Component */
